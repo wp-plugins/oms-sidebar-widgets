@@ -11,22 +11,20 @@ A WordPress plugin to display image, video, and/or map widgets in the sidebar.
 
 == Description ==
 
-A collection of widgets for displaying images, videos, and/or maps in your
+A collection of widgets for displaying maps, images, and/or videos in your
 website sidebars.
 
-**Sidebar Image & Sidebar Video**
-
-Images and videos play in a `prettyPhoto` lightbox. Videos can be hosted on
-either YouTube or Vimeo. Viddler is currently not supported.
-
-**Sidebar Map**
-
+= Sidebar Map =
 Maps are powered by the Google Maps API v3. Locations can be automatically
 geocoded or latitude and longitude coordinates can be specified for more precise
 control. Multiple map locations (pins) are supported.
 
-----
+= Sidebar Image & Sidebar Video =
+Images and videos play in a `prettyPhoto` lightbox. External images are
+supported. Videos can be hosted on either YouTube or Vimeo. Viddler is currently
+not supported.
 
+= Notes =
 This plugin pairs well with the `Simple Page Sidebars` plugin to allow different
 images, videos, or maps to be displayed on individual pages.
 
