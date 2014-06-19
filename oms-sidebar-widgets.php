@@ -6,7 +6,7 @@
      * Description: Basic sidebar widget functionality. Widgets include: Image, Video (YouTube, Vimeo), Content, Map (Google).
      * Author: Jimmy K. <jimmy@orbitmedia.com>
      * Author URI: http://www.orbitmedia.com
-     * Version: 2.1
+     * Version: 2.2
      */
 
     // Whether or not we're debugging.

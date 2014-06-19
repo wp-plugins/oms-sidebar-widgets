@@ -131,8 +131,8 @@
                 $json = json_decode($instance['json']);
             } else {
                 // Create an empty JSON object.
-                $json = [
-                    [
+                $json = array(
+                    array(
                         name => '',
                         address_1 => '',
                         address_2 => '',
@@ -145,8 +145,8 @@
                         email => '',
                         phone => '',
                         fax => '',
-                    ],
-                ];
+                    ),
+                );
             }
 
             // Hold the index.

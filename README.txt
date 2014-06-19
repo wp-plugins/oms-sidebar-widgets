@@ -57,3 +57,6 @@ Minor bug fixes and refactoring.
 
 = 2.1 =
 The refactored release of this plugin. Added multiple pins to map widgets.
+
+= 2.2 =
+Changed array object creation from [] to array() for < PHP 5.4.
