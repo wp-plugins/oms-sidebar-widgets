@@ -1,5 +1,5 @@
 === OMS Sidebar Widgets ===
-Contributors: jklatt86
+Contributors: jklatt86, sorensenss
 Tags: sidebar, image, prettyphoto, video, youtube, vimeo, map, location, google, widget
 Requires at least: 3.0.1
 Tested up to: 3.9
