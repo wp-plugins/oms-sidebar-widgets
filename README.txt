@@ -44,6 +44,12 @@ This plugin uses the `Google Maps API v3` to display maps and geocode addresses.
 Yes you can! You can specify the icon image to use for each map. Alternatively,
 if one is not supplied, the default one will be used.
 
+== Screenshots ==
+
+1. An example of a sidebar map. Left, widget output; right, widget form.
+2. An example of a sidebar video. Left, widget output; right, widget form. (Sidebar Image is very similar.)
+3. An example of a sidebar image lightbox. (Sidebar Video is very similar.)
+
 == Changelog ==
 
 = 0.1 =
