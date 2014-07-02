@@ -75,3 +75,6 @@ The refactored release of this plugin. Added multiple pins to map widgets.
 
 = 2.2 =
 Changed array object creation from [] to array() for < PHP 5.4.
+
+= 2.3 =
+Added checks to make sure the prettyPhoto library is loaded before initializing.

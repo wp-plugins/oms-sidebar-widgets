@@ -60,6 +60,7 @@
         public function enqueue_admin_scripts()
         {
 
+            // Enqueue WordPress' built-in media library.
             wp_enqueue_media();
 
         }
@@ -75,9 +76,9 @@
         {
 
             // PRETTYPHOTO
-            wp_enqueue_style('oms_sw_prettyPhoto', $this->settings['dir'] . '/vendor/prettyPhoto_uncompressed_3.1.5/css/prettyPhoto.css');
-            wp_register_script('oms_sw_prettyPhoto', $this->settings['dir'] . '/vendor/prettyPhoto_uncompressed_3.1.5/js/jquery.prettyPhoto.js');
-            wp_enqueue_script('oms_sw_prettyPhoto');
+            wp_enqueue_style('oms_sw_prettyphoto_css', $this->settings['dir'] . '/vendor/prettyPhoto_uncompressed_3.1.5/css/prettyPhoto.css');
+            wp_register_script('oms_sw_prettyphoto_lib', $this->settings['dir'] . '/vendor/prettyPhoto_uncompressed_3.1.5/js/jquery.prettyPhoto.js');
+            wp_enqueue_script('oms_sw_prettyphoto_lib');
 
             // SCRIPTS
             wp_register_script('oms_sw_scripts', $this->settings['dir'] . '/js/oms-sw.js');

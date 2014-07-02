@@ -25,19 +25,40 @@
         // Initialize the select media buttons.
         oms_sw_init_media_buttons();
 
-        if (typeof prettyPhoto == 'undefined') {
-            // Only initialize prettyPhoto if it isn't already initialized.
+        // Initialize the Google maps.
+        oms_sw_map_create_maps();
+
+        if (oms_sw_prettyphoto_lib_loaded()) {
+            // Initialize prettyPhoto if the prettyPhoto library is loaded.
             oms_sw_init_prettyphoto();
         }
-
-        // Initialize the Google maps.
-        oms_sw_map_create_maps(); // oms_sw_init_maps();
 
     });
 
     /* ======================================== */
     /* prettyPhoto
     /* ======================================== */
+
+    /**
+     * Check if the prettyPhoto library is loaded.
+     *
+     * @return boolean
+     * @author Jimmy K. <jimmy@orbitmedia.com>
+     */
+
+    function oms_sw_prettyphoto_lib_loaded()
+    {
+
+        var $loaded = false;
+
+        if (typeof jQuery.fn.prettyPhoto == "function") {
+            // Update the flag.
+            $loaded = true;
+        }
+
+        return $loaded;
+
+    }
 
     /**
      * Initialize prettyPhoto.
@@ -49,19 +70,25 @@
     function oms_sw_init_prettyphoto()
     {
 
-        // Initialize prettyPhoto.
-        jQuery.fn.prettyPhoto();
+        try {
 
-        // Bind the prettyPhoto links using the `rel` attribute.
-        jQuery("a[rel^='prettyPhoto']").prettyPhoto({
-            allow_expand: false,
-            allow_resize: true,
-            counter_seperator: ' of ',
-            show_title: false,
-            social_tools: '',
-            theme: 'light_square',
-            deeplinking: false
-        });
+            // Initialize prettyPhoto.
+            jQuery.fn.prettyPhoto();
+
+            // Bind the prettyPhoto links using the `rel` attribute.
+            jQuery("a[rel^='prettyPhoto']").prettyPhoto({
+                allow_expand: false,
+                allow_resize: true,
+                counter_seperator: ' of ',
+                show_title: false,
+                social_tools: '',
+                theme: 'light_square',
+                deeplinking: false
+            });
+
+        } catch ($e) {
+            // console.log($e);
+        }
 
     }
 
