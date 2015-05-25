@@ -34,7 +34,6 @@
             // Set the plugin settings.
             $this->settings['namespace'] = 'oms_sw';
             $this->settings['dir'] = plugins_url('/oms-sidebar-widgets');
-            $this->settings['version'] = '2.1';
 
             // Only enqueue CSS and JavaScript on the front-end and widgets page.
             if ($pagenow == 'index.php' || $pagenow == 'widgets.php') {
@@ -76,8 +75,8 @@
         {
 
             // PRETTYPHOTO
-            wp_enqueue_style('oms_sw_prettyphoto_css', $this->settings['dir'] . '/vendor/prettyPhoto_uncompressed_3.1.5/css/prettyPhoto.css');
-            wp_register_script('oms_sw_prettyphoto_lib', $this->settings['dir'] . '/vendor/prettyPhoto_uncompressed_3.1.5/js/jquery.prettyPhoto.js');
+            wp_enqueue_style('oms_sw_prettyphoto_css', $this->settings['dir'] . '/vendor/prettyPhoto/css/prettyPhoto.css');
+            wp_register_script('oms_sw_prettyphoto_lib', $this->settings['dir'] . '/vendor/prettyPhoto/js/jquery.prettyPhoto.js');
             wp_enqueue_script('oms_sw_prettyphoto_lib');
 
             // SCRIPTS

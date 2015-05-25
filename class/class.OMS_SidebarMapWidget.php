@@ -80,6 +80,9 @@
         public function form($instance)
         {
 
+            // Generate a unique id for this form.
+            $unique_id = rand(0, 9999);
+
             // Get the instance.
             $instance = wp_parse_args(
                 (array) $instance,
@@ -88,7 +91,7 @@
 
             echo '
                 <!-- oms-sw-map-form-container -->
-                <div class="oms-sw-map-form-container">
+                <div id="oms-sw-map-form-' . $unique_id . '" class="oms-sw-map-form-container">
             ';
 
             // JSON
@@ -123,7 +126,7 @@
 
             echo '
                 <!-- repeatableContainer -->
-                <div class="repeatableContainer oms-sw-map-repeatable-container">
+                <div id="oms-sw-map-repeatable-container-' . $unique_id . '" class="repeatableContainer oms-sw-map-repeatable-container">
             ';
 
             if (!empty($instance['json'])) {
@@ -258,7 +261,7 @@
                 ';
 
                 echo '
-                        <input type="button" value="Remove Location" class="oms-sw-map-remove-location widefat button button-primary" onclick="oms_sw_map_remove_fieldset(this);" />
+                        <input type="button" value="Remove Location" class="oms-sw-map-remove-location widefat button button-primary" onclick="oms_sw_map_remove_fieldset(this, ' . $unique_id . ');" />
                     </fieldset>
                 ';
 
@@ -266,7 +269,7 @@
 
             echo '
                     </div><!-- /repeatableContainer -->
-                    <input type="button" value="+ Add Location" class="oms-sw-map-add-location widefat button" onclick="oms_sw_map_add_fieldset(this);" />
+                    <input type="button" value="+ Add Location" class="oms-sw-map-add-location widefat button" onclick="oms_sw_map_add_fieldset(this, ' . $unique_id . ');" />
                 </div><!-- /oms-sw-map-form-container -->
             ';
 

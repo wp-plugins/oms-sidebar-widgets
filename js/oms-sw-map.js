@@ -35,14 +35,17 @@
      * @author Jimmy K. <jimmy@orbitmedia.com>
      */
 
-    function oms_sw_map_parse_json()
+    function oms_sw_map_parse_json($e)
     {
+
+        // Get the form.
+        // $form = jQuery('#widgets-right .oms-sw-map-repeatable-container').closest('form');
+
+        // Get the id of the form this button belongs to.
+        var $form = jQuery('#' + $e.target.id).closest('form');
 
         // Hold the JSON values.
         $json_values = [];
-
-        // Get the form.
-        $form = jQuery('#widgets-right .oms-sw-map-repeatable-container').closest('form');
 
         jQuery('.repeatable', $form).each(function() {
 
@@ -79,33 +82,27 @@
      * @author Jimmy K. <jimmy@orbitmedia.com>
      */
 
-    function oms_sw_map_add_fieldset($element)
+    function oms_sw_map_add_fieldset($element, $form_id)
     {
 
         // Get the form.
-        $form = jQuery('#widgets-right .oms-sw-map-repeatable-container').closest('form');
+        $form = jQuery('#oms-sw-map-form-' + $form_id);
 
         // Get the original repeatable fieldset.
-        $repeatable_fieldset = jQuery('.repeatable.original', $form);
+        $repeatable_fieldset = jQuery('.repeatable.original', $form).first();
 
         // Clone the fieldset.
         $cloned_fieldset = $repeatable_fieldset.clone();
 
-        // Append the cloned fieldset.
-        $cloned_fieldset.appendTo('.repeatableContainer', $form);
-
-        // Add "cloned" class to the cloned fieldset so we know that it
-        // is a cloned fieldset and can be deleted.
-        $cloned_fieldset.addClass('clone');
-
-        // Remove the "original" class from the cloned fieldset.
-        $cloned_fieldset.removeClass('original');
-
-        // Create the button listener.
-        // oms_sw_create_delete_map_fieldset_listener();
-
         // Reset the fields.
         jQuery('input[type="text"]', $cloned_fieldset).val('');
+
+        // Remove the "original" class from the cloned fieldset. Then add a "cloned" class so we
+        // know that it can be deleted.
+        $cloned_fieldset.removeClass('original').addClass('clone');
+
+        // Append the cloned fieldset.
+        $cloned_fieldset.appendTo('#oms-sw-map-repeatable-container-' + $form_id);
 
     }
 
