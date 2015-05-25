@@ -2,7 +2,7 @@
 Contributors: jklatt86, sorensenss
 Tags: sidebar, image, prettyphoto, video, youtube, vimeo, map, location, google, widget
 Requires at least: 3.0.1
-Tested up to: 3.9
+Tested up to: 4.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -78,3 +78,9 @@ Changed array object creation from [] to array() for < PHP 5.4.
 
 = 2.3 =
 Added checks to make sure the prettyPhoto library is loaded before initializing.
+
+= 2.4 =
+Fixed multiple map widgets bug where fields were being duplicated.
+
+= 2.5 =
+Fixed prettyPhoto XSS vulnerability by updating prettyPhoto to 3.1.6.
